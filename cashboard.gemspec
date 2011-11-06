@@ -53,7 +53,6 @@ Gem::Specification.new do |s|
      "lib/cashboard/version.rb",
      "lib/typecasted_open_struct.rb",
      "test/fixtures/account.xml",
-     "test/fixtures/cashboard_credentials.yml",
      "test/fixtures/client_companies.xml",
      "test/fixtures/client_contacts.xml",
      "test/fixtures/company_memberships.xml",
