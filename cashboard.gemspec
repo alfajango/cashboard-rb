@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{cashboard}
-  s.version = "1.0.1"
+  s.version = "1.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Subimage LLC"]
-  s.date = %q{2010-07-29}
+  s.date = %q{2011-11-05}
   s.description = %q{For more information see the homepage. Support and discussion can be found on the Cashboard forum (http://forum.getcashboard.com/)}
   s.email = %q{support@getcashboard.com}
   s.extra_rdoc_files = [
@@ -108,20 +108,23 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<mocha>, [">= 0.9.8"])
       s.add_development_dependency(%q<fakeweb>, [">= 1.2.8"])
-      s.add_runtime_dependency(%q<activesupport>, [">= 2.3.5"])
+      s.add_runtime_dependency(%q<activesupport>, [">= 3.0"])
+      s.add_runtime_dependency(%q<i18n>, [">= 0"])
       s.add_runtime_dependency(%q<httparty>, [">= 0.6.1"])
       s.add_runtime_dependency(%q<xml-simple>, [">= 1.0.12"])
     else
       s.add_dependency(%q<mocha>, [">= 0.9.8"])
       s.add_dependency(%q<fakeweb>, [">= 1.2.8"])
-      s.add_dependency(%q<activesupport>, [">= 2.3.5"])
+      s.add_dependency(%q<activesupport>, [">= 3.0"])
+      s.add_dependency(%q<i18n>, [">= 0"])
       s.add_dependency(%q<httparty>, [">= 0.6.1"])
       s.add_dependency(%q<xml-simple>, [">= 1.0.12"])
     end
   else
     s.add_dependency(%q<mocha>, [">= 0.9.8"])
     s.add_dependency(%q<fakeweb>, [">= 1.2.8"])
-    s.add_dependency(%q<activesupport>, [">= 2.3.5"])
+    s.add_dependency(%q<activesupport>, [">= 3.0"])
+    s.add_dependency(%q<i18n>, [">= 0"])
     s.add_dependency(%q<httparty>, [">= 0.6.1"])
     s.add_dependency(%q<xml-simple>, [">= 1.0.12"])
   end

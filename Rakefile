@@ -15,7 +15,8 @@ begin
     gem.version = Cashboard::VERSION
     gem.add_development_dependency('mocha', '>= 0.9.8')
     gem.add_development_dependency('fakeweb', '>= 1.2.8')
-    gem.add_dependency('activesupport', '>= 2.3.5')
+    gem.add_dependency('activesupport', '>= 3.0')
+    gem.add_dependency('i18n')
     gem.add_dependency('httparty', '>= 0.6.1')
     gem.add_dependency('xml-simple', '>= 1.0.12')
   end

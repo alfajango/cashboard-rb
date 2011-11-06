@@ -1,3 +1,5 @@
+# Should we try and connect to our test environment or not
+# For local cashboard devs only.
 TEST_ENVIRONMENT = true
 
 require File.dirname(__FILE__) + '/../lib/cashboard'

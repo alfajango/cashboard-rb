@@ -2,10 +2,12 @@ $LOAD_PATH << File.join(File.dirname(__FILE__))
 
 require 'typecasted_open_struct'
 require 'rubygems'
-require 'active_support'
 require 'httparty'
 require 'xmlsimple'
 require 'builder'
+require 'active_support'
+require 'active_support/core_ext'
+require 'active_support/inflector'
 
 module Cashboard
   # When reading the parsed hashes generated from parser we ignore these pairs.
@@ -47,15 +49,24 @@ end
 class HTTParty::Parser
   protected
     def xml
-      XmlSimple.xml_in(
-        body, 
-        'KeepRoot' => false, 
-        # Force 'link' tags into an array always
-        'ForceArray' => %w(link),
-        # Force each item into a hash with a 'content' key for the tag value
-        # If we don't do this random tag attributes can screw us up.
-        'ForceContent' => true
-      )
+      # We get instances of empty bodies for update and things.
+      # That can cause XmlSimple to bomb out.
+      #
+      # Rather return an empty hash than nothing at all.
+      if body.blank?
+        return {}
+      else
+        obj = XmlSimple.xml_in(
+          body, 
+          'KeepRoot' => false, 
+          # Force 'link' tags into an array always
+          'ForceArray' => %w(link),
+          # Force each item into a hash with a 'content' key for the tag value
+          # If we don't do this random tag attributes can screw us up.
+          'ForceContent' => true
+        )
+        return obj
+      end
     end
 end
 
