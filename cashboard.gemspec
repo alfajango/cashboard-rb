@@ -48,6 +48,7 @@ Gem::Specification.new do |s|
      "lib/cashboard/line_item.rb",
      "lib/cashboard/payment.rb",
      "lib/cashboard/project.rb",
+     "lib/cashboard/project_list.rb",
      "lib/cashboard/project_assignment.rb",
      "lib/cashboard/time_entry.rb",
      "lib/cashboard/version.rb",
